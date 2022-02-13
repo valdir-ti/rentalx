@@ -2,6 +2,7 @@ import express from "express";
 
 import { routes } from "./routes";
 
+const PORT = 3333;
 const app = express();
 
 app.use(express.json());
@@ -12,4 +13,4 @@ app.get("/", (request, response) => {
 
 app.use(routes);
 
-app.listen(3333, () => console.log("API running!"));
+app.listen(PORT, () => console.log(`API running on PORT: ${PORT}`));
