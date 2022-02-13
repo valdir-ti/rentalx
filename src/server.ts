@@ -1,9 +1,11 @@
-import express from 'express'
+import express from "express";
 
-const app = express()
+const app = express();
 
-app.get('/', (request, response) => {
-  return response.json({ message: 'API rentalx' })
-})
+app.use(express.json());
 
-app.listen(3333, () => console.log('API running!'))
+app.get("/", (request, response) => {
+  return response.json({ message: "API rentalx" });
+});
+
+app.listen(3333, () => console.log("API running!"));
