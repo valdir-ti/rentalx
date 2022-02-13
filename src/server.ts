@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (request, response) => {
-  return response.json({ message: "API rentalx" });
+  return response.json({ message: "API rentalx is running!" });
 });
 
 app.use(routes);

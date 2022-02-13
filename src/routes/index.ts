@@ -4,6 +4,6 @@ import { categoriesRoutes } from "./categories.routes";
 
 const routes = express();
 
-routes.use(categoriesRoutes);
+routes.use("/categories", categoriesRoutes);
 
 export { routes };
