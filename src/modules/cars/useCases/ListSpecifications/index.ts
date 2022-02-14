@@ -4,10 +4,10 @@ import { ListSpecificationsUseCase } from "./ListSpecificationsUseCase";
 
 const listSpecificationRepository = SpecificationsRepository.getInstance();
 const listSpecificationsUseCase = new ListSpecificationsUseCase(
-  listSpecificationRepository
+    listSpecificationRepository
 );
 const listSpecificationsController = new ListSpecificationsController(
-  listSpecificationsUseCase
+    listSpecificationsUseCase
 );
 
 export { listSpecificationsController };
