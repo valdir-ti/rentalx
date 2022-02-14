@@ -60,7 +60,8 @@
             "error",
             { "devDependencies": ["**/*.spec.js"] }
         ],
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": false }]
     },
     "settings": {
         "import/resolver": {
