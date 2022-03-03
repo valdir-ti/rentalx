@@ -3,7 +3,7 @@ import "reflect-metadata";
 import bodyParser from "body-parser";
 import express from "express";
 import fs from "fs";
-import moment from "moment";
+import * as moment from "moment-timezone";
 import morganBody from "morgan-body";
 import path from "path";
 import swaggerUi from "swagger-ui-express";
@@ -27,7 +27,7 @@ const log = fs.createWriteStream(
     path.join(
         __dirname,
         "./logs",
-        `express-${moment().tz("America/Sao_Paulo").format("YYYY-MM-DD")}.log`
+        `express-${moment.tz("America/Sao_Paulo").format("YYYY-MM-DD")}.log`
     ),
     {
         flags: "a",
