@@ -21,7 +21,7 @@ class CategoriesRepository implements ICategoriesRepository {
                 "categories.name",
                 "categories.description",
             ])
-            .cache(true)
+            .cache(process.env.APP_CACHE || true)
             .getMany();
         return categories;
     }

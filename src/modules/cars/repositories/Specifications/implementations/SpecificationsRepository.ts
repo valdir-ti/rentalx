@@ -21,7 +21,7 @@ class SpecificationsRepository implements ISpecificationsRepository {
                 "specifications.name",
                 "specifications.description",
             ])
-            .cache(true)
+            .cache(process.env.APP_CACHE || true)
             .getMany();
         return specifications;
     }
