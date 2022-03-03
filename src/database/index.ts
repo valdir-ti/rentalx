@@ -2,6 +2,7 @@ import { createConnection, getConnectionOptions } from "typeorm";
 
 interface IOptions {
     host: string;
+    cache: true;
 }
 
 getConnectionOptions().then((options) => {

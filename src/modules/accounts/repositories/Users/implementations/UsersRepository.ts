@@ -24,6 +24,7 @@ class UsersRepository implements IUsersRepository {
                 "users.isAble",
                 "users.status",
             ])
+            .cache(true)
             .getMany();
 
         return users;

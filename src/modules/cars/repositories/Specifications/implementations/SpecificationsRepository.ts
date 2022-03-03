@@ -21,6 +21,7 @@ class SpecificationsRepository implements ISpecificationsRepository {
                 "specifications.name",
                 "specifications.description",
             ])
+            .cache(true)
             .getMany();
         return specifications;
     }
