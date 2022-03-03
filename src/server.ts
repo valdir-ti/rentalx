@@ -15,7 +15,7 @@ import "./database";
 
 import "./shared/container";
 
-const PORT = 3333;
+const { APP_PORT } = process.env;
 
 const app = express();
 
@@ -47,4 +47,4 @@ app.get("/", (request, response) => {
 
 app.use(routes);
 
-app.listen(PORT, () => console.log(`API running on PORT: ${PORT}`));
+app.listen(APP_PORT, () => console.log(`API running on PORT: ${APP_PORT}`));
