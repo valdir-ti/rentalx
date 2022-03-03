@@ -152,6 +152,59 @@
                     }
                 }
             }
+        },
+        "/users": {
+            "get": {
+                "tags": ["User"],
+                "summary":"List all users",
+                "description":"List all users",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "itens": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            },
+            "post": {
+                "tags": ["User"],
+                "summary":"Create a user",
+                "description":"Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "User already exists"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -168,6 +221,37 @@
             "example": {
                 "name": "Specification name sample",
                 "description": "Specification description sample"
+            }
+        },
+        "User": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                },
+                "drive_license": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "cpf": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "name": "User name sample",
+                "email": "User email sample",
+                "username": "User username sample",
+                "drive_license": "User drive_license sample",
+                "password": "User password sample",
+                "cpf": "User cpf sample"
             }
         }
     }
