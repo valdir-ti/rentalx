@@ -6,7 +6,7 @@ interface IOptions {
 
 getConnectionOptions().then((options) => {
     const newOptions = options as IOptions;
-    newOptions.host = "database_rentalx";
+    newOptions.host = process.env.DATABASE_NAME;
     createConnection({
         ...options,
     });

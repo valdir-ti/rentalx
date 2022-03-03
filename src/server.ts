@@ -1,3 +1,4 @@
+import "dotenv/config";
 import "reflect-metadata";
 import bodyParser from "body-parser";
 import express from "express";
