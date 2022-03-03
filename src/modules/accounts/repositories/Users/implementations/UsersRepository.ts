@@ -12,7 +12,20 @@ class UsersRepository implements IUsersRepository {
     }
 
     async list(): Promise<User[]> {
-        const users = await this.repository.find();
+        const users = await this.repository
+            .createQueryBuilder("users")
+            .select([
+                "users.id",
+                "users.name",
+                "users.username",
+                "users.email",
+                "users.cpf",
+                "users.isAdmin",
+                "users.isAble",
+                "users.status",
+            ])
+            .getMany();
+
         return users;
     }
 

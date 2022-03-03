@@ -14,7 +14,14 @@ class SpecificationsRepository implements ISpecificationsRepository {
     }
 
     async list(): Promise<Specification[]> {
-        const specifications = await this.repository.find();
+        const specifications = await this.repository
+            .createQueryBuilder("specifications")
+            .select([
+                "specifications.id",
+                "specifications.name",
+                "specifications.description",
+            ])
+            .getMany();
         return specifications;
     }
 

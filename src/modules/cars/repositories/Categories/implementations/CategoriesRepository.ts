@@ -14,7 +14,14 @@ class CategoriesRepository implements ICategoriesRepository {
     }
 
     async list(): Promise<Category[]> {
-        const categories = await this.repository.find();
+        const categories = await this.repository
+            .createQueryBuilder("categories")
+            .select([
+                "categories.id",
+                "categories.name",
+                "categories.description",
+            ])
+            .getMany();
         return categories;
     }
 
