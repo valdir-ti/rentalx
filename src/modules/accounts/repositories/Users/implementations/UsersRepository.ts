@@ -17,7 +17,6 @@ class UsersRepository implements IUsersRepository {
             .select([
                 "users.id",
                 "users.name",
-                "users.username",
                 "users.email",
                 "users.cpf",
                 "users.isAdmin",
@@ -32,7 +31,6 @@ class UsersRepository implements IUsersRepository {
 
     async create({
         name,
-        username,
         email,
         drive_license,
         password,
@@ -40,7 +38,6 @@ class UsersRepository implements IUsersRepository {
     }: ICreateUserDTO): Promise<void> {
         const user = this.repository.create({
             name,
-            username,
             email,
             drive_license,
             password,
